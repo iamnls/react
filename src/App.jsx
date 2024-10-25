@@ -1,36 +1,57 @@
-import { useState } from 'react'
+// import { useState } from 'react'
+// import './App.css'
+// import Navbar from './components/Navbar'
+
+// function App() {
+//   //const [color, setColor] = useState("blue")
+//   const [mode, setMode] = useState('light')
+//   const [text, setText] = useState('enable dark mode')
+//     const toggleMode=()=>{
+//   if (mode=='light'){
+//     setMode('dark')
+//     setText('enable light mode')
+//   }
+//   else{
+//     setMode('light')
+//     setText('enable dark mode')
+//   }
+//   }
+
+//   return (
+//     <>
+//       <Navbar title="this is header" mode={mode} text={text} toggleMode={toggleMode}/>
+
+//       <h1>Vite + React</h1>
+//       {/*<div className="card">
+//         <button onClick={() => setColor("red")}>
+//           please click this page  {color}
+//         </button>
+
+//       </div>*/}
+
+//     </>
+//   )
+// }
+
+// export default App
+
+import React, { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 
 function App() {
-  //const [color, setColor] = useState("blue")
-  const [mode, setMode] = useState('light')
-  const [text, setText] = useState('enable dark mode')
-    const toggleMode=()=>{
-  if (mode=='light'){
-    setMode('dark')
-    setText('enable light mode')
-  }
-  else{
-    setMode('light')
-    setText('enable dark mode')
-  }
-  }
+  const [color, setColor] = useState('blue')
+
+  const handleSetColor = (newColor) => {
+    setColor(newColor);
+  };
 
   return (
-    <>
-      <Navbar title="this is header" mode={mode} text={text} toggleMode={toggleMode}/>
-
-      <h1>Vite + React</h1>
-      {/*<div className="card">
-        <button onClick={() => setColor("red")}>
-          please click this page  {color}
-        </button>
-
-      </div>*/}
-
-    </>
-  )
+    <div>
+      <Navbar setColor={handleSetColor} />
+      <p style={{ color: color }}>This text changes color!</p>
+    </div>
+  );
 }
 
-export default App
+export default App;

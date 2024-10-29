@@ -7,10 +7,11 @@ import {
   Routes,
   Route,
   Link,
-  } from "react-router-dom";
-import About from './components/About';
-import Contact from './components/Contact';
-import Home from './components/Home';
+  } from "react-router-dom"
+import About from './components/About'
+import Contact from './components/Contact'
+import Home from './components/Home'
+import Email from './components/Email'
 
 function App() {
   //const [color, setColor] = useState("blue")
@@ -53,6 +54,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about'element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        <Route Path='/email' element={<Email />} />
       </Routes>       
     </Router>
 

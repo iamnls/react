@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Alert from './Alert'
 
 const Home = () => {
   const [text, setText] = useState("hello world")
@@ -39,7 +40,11 @@ const Home = () => {
     setText(e.target.value)
   };
 
-  const handleChangeColor =(e)=>{
+  const handleColorChange = (event) => {
+    setSelectedColor(e.target.value)
+  };
+
+  const textChangeColor =()=>{
     setColor(e.target.valued)
   }
 
@@ -54,6 +59,7 @@ const Home = () => {
         <button className='btn btn-primary mt-3 mx-2' onClick={handleLowerCase}>Lowercase</button>
         <button className='btn btn-primary mt-3 mx-2' onClick={clearTextArea}>clear</button>
         <button className='btn btn-primary mt-3 mx-2' onClick={copyTextArea}>copy</button>
+        <button className='btn btn-primary mt-3 mx-2' onClick={textChangeColor}>textcolor</button>
       </div>
       
       <div className="container">

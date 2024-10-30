@@ -4,14 +4,11 @@ import Alert from './Alert'
 const Home = () => {
   const [text, setText] = useState("hello world")
   const [alert, setAlert] = useState(null)
-  const [color, setColor] = useState("default")
+  
 
 
 
-  const showAlert = (message) =>{
-    setAlert(message);
-    setTimeout(() => setAlert(), 2000)
-  }
+  
 
   const handleUpperCase = () => {
     console.log("Uppercase button clicked")
@@ -44,9 +41,7 @@ const Home = () => {
     setSelectedColor(e.target.value)
   };
 
-  const textChangeColor =()=>{
-    setColor(e.target.valued)
-  }
+ 
 
   return (
     <div>
@@ -59,8 +54,9 @@ const Home = () => {
         <button className='btn btn-primary mt-3 mx-2' onClick={handleLowerCase}>Lowercase</button>
         <button className='btn btn-primary mt-3 mx-2' onClick={clearTextArea}>clear</button>
         <button className='btn btn-primary mt-3 mx-2' onClick={copyTextArea}>copy</button>
-        <button className='btn btn-primary mt-3 mx-2' onClick={textChangeColor}>textcolor</button>
+       
       </div>
+     
       
       <div className="container">
         <h4>Analyze your text</h4>

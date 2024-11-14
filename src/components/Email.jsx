@@ -1,10 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const Email = () => {
+function Email() {
   return (
-    <div>
-      <h4>this is email</h4>
-    </div>
+    <div>Email</div>
   )
 }
 

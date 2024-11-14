@@ -33,7 +33,16 @@ const Navbar = (props) => {
                             <Link className="nav-link" to="/contact">Contact Us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Email</Link>
+                            <Link className="nav-link" to="/contact">SignUp</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/product">Product</Link>
+                        </li>                       
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/email">Email</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/login">Login</Link>
                         </li>
                         
                     </ul>

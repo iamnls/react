@@ -3,12 +3,7 @@ import Alert from './Alert'
 
 const Home = () => {
   const [text, setText] = useState("hello world")
-  const [alert, setAlert] = useState(null)
-  
-
-
-
-  
+  const [alert, setAlert] = useState(null) 
 
   const handleUpperCase = () => {
     console.log("Uppercase button clicked")
@@ -44,6 +39,7 @@ const Home = () => {
  
 
   return (
+            
     <div>
       <div className="mb-3 container">
       {alert && <div className="alert alert-success" role="alert">{alert}</div>}
@@ -54,6 +50,7 @@ const Home = () => {
         <button className='btn btn-primary mt-3 mx-2' onClick={handleLowerCase}>Lowercase</button>
         <button className='btn btn-primary mt-3 mx-2' onClick={clearTextArea}>clear</button>
         <button className='btn btn-primary mt-3 mx-2' onClick={copyTextArea}>copy</button>
+        <button className='btn btn-primary mt-3 mx-2' onClick={copyTextArea}>Download</button>
        
       </div>
      
@@ -66,8 +63,7 @@ const Home = () => {
       <p>{text.length>0?text:"no preview to display"}</p>
      
       </div>
-      
-    </div>
+      </div>
   );
 };
 

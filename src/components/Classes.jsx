@@ -1,29 +1,27 @@
 import React, { Component } from 'react'
 
 export default class Classes extends Component {
-  constructor(props){
-    super(props)
-    this.state={count:0}
-    //constructor initialization
-}
-componentDidMount(){
-    // component did mount
-    this.interval =setInterval(() => {
-        this.setState({count: this.state.count +1})
-    }, 1000)
-  }
-//   shouldComponentUpdate(){
+    constructor(props){
+        super(props)
+        this.state={count:0}
+        // constructor initialization
+    }
+    componentDidMount(){
+        // component did mount
+        this.interval =setInterval(()=>{
+            this.setState({count: this.state.count + 1})
+        }, 1000)
+    }
+    // shouldComponentUpdate(){
 
-//   }
-//   componentDidupdate(){
+    // }
+    // componentDidUpdate(){
 
-//   }
-//   componentWillUnmount(){
-    
-//   }
+    // }
+    // componentWillUnmount(){
 
-  
-    render() {
+    // }
+  render() {
     return (
       <div>
         <h1>count :{this.state.count}</h1>
@@ -31,6 +29,7 @@ componentDidMount(){
     )
   }
 }
+
 
 // In React, components go through a lifecycle that can be divided into three main phases:
 
@@ -61,3 +60,4 @@ componentDidMount(){
 // shouldComponentUpdate: Only re-renders if the count is even.
 // componentDidUpdate: Logs every update after a re-render.
 // componentWillUnmount: Clears the interval on unmount.
+

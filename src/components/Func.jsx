@@ -22,8 +22,8 @@ import React, { useEffect, useState } from 'react'
 
 const Func=()=> {
 const [count, setCount] = useState(0)
-const [message, setMessage] = useState(null)
-const [notification, setNotification] = useState([])
+// const [message, setMessage] = useState(null)
+// const [notification, setNotification] = useState([])
 
 
 console.log("this is official className //rendered");
@@ -34,7 +34,7 @@ useEffect(() => {
     console.log("component will unmount");
 
   }
-}, [count])
+}, [])
 
 useEffect(() => {
   console.log("count updated", count, message, notification);

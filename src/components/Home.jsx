@@ -1,47 +1,51 @@
-import React, { useState } from 'react';
-import Alert from './Alert'
+import React  from 'react';
+import Banner from './Banner';
+import About from './About';
+
+
+// import Alert from './Alert'
 
 const Home = () => {
-  const [text, setText] = useState("hello world")
-  const [alert, setAlert] = useState(null) 
+  // const [text, setText] = useState("hello world")
+  // const [alert, setAlert] = useState(null) 
 
-  const handleUpperCase = () => {
-    console.log("Uppercase button clicked")
-    setText(text.toUpperCase())
-    setAlert("text in uppercase")
+  // const handleUpperCase = () => {
+  //   console.log("Uppercase button clicked")
+  //   setText(text.toUpperCase())
+  //   setAlert("text in uppercase")
 
-  };
-  const handleLowerCase = () => {
-    console.log("lower")
-    setText(text.toLowerCase())
-    setAlert("text in lowercase")
-  }
-  const clearTextArea = () => {
-    setText('')
-    setAlert("text clear")
+  // };
+  // const handleLowerCase = () => {
+  //   console.log("lower")
+  //   setText(text.toLowerCase())
+  //   setAlert("text in lowercase")
+  // }
+  // const clearTextArea = () => {
+  //   setText('')
+  //   setAlert("text clear")
 
-  }
-  const copyTextArea = () => {
-    navigator.clipboard.writeText(text)
-    showAlert("text copied")
-  };
+  // }
+  // const copyTextArea = () => {
+  //   navigator.clipboard.writeText(text)
+  //   showAlert("text copied")
+  // };
 
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setText(e.target.value)
-  };
+  // const handleChange = (e) => {
+  //   e.preventDefault();
+  //   setText(e.target.value)
+  // };
 
-  const handleColorChange = (event) => {
-    setSelectedColor(e.target.value)
-  };
+  // const handleColorChange = (event) => {
+  //   setSelectedColor(e.target.value)
+  // };
 
  
 
   return (
             
     <div>
-      <div className="mb-3 container">
+      {/* <div className="mb-3 container">
       {alert && <div className="alert alert-success" role="alert">{alert}</div>}
         <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
         <textarea className="form-control" value={text} onChange={handleChange} placeholder={text}
@@ -62,7 +66,9 @@ const Home = () => {
         <h4>preview text</h4>
       <p>{text.length>0?text:"no preview to display"}</p>
      
-      </div>
+      </div> */}
+      <Banner />
+      <About />
       </div>
   );
 };

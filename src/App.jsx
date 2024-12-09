@@ -18,6 +18,8 @@ import ProductState from './context/ProductState';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import CartItems from './components/CartItems';
+import Openeditmodel from './components/Openeditmodel';
+import Addproduct from './components/AddProduct';
 
 
 
@@ -69,7 +71,9 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/cartitems" element={<CartItems />} />
+            <Route path="/cartitems" element={<CartItems />}/>
+            <Route path='/addproduct' element={<Addproduct showAlert={showAlert}/>}></Route>
+           
          
           </Routes>
         </Router>

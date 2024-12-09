@@ -1,12 +1,23 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
-import productContext from '../context/productContext'
+import productContext from '../context/productContext';
 
 const Navbar = (props) => {
-  const context = useContext(productContext)
-  const { state: { cart}} = context
+  const context = useContext(productContext);
+  const { state: { cart } } = context;
+  const navigate = useNavigate();
 
+  const handleSignOut = () => {
+    try {
+      localStorage.removeItem('token');
+      navigate('/login');
+    } catch (error) {
+      console.error("Error during sign out: ", error);
+    }
+  };
+
+  const isAuthenticated = !!localStorage.getItem('token');
 
   return (
     <div>
@@ -38,25 +49,30 @@ const Navbar = (props) => {
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">Contact Us</Link>
               </li>
+              {!isAuthenticated ? (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/signup">Signup</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login">Login</Link>
+                  </li>
+                </>
+              ) : (
+                <li className="nav-item">
+                  <button className='btn btn-danger nav-link' onClick={handleSignOut}>Sign Out</button>
+                </li>
+              )}
               <li className="nav-item">
-                <Link className="nav-link" to="/signup">Signup</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">Login</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link position-relative" to="./cartitems"><FaShoppingCart />
-                    <span class="position-absolute top-5 start-100 translate-middle badge  bg-danger">
-                      {cart.length}
-                      <span class="visually-hidden">unread messages</span>
-                    </span>
-                 
+                <Link className="nav-link position-relative" to="/cartitems"><FaShoppingCart />
+                  <span className="position-absolute top-5 start-100 translate-middle badge bg-danger">
+                    {cart?.length || 0}
+                    <span className="visually-hidden">unread messages</span>
+                  </span>
                 </Link>
-
               </li>
-
             </ul>
-            <button className='btn btn-success' onClick={props.toggleMode}>{props.text}</button>
+            <button className='btn btn-success me-2' onClick={props.toggleMode}>{props.text}</button>
           </div>
         </div>
       </nav>
